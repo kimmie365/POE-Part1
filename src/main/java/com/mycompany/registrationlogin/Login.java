@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class Login {
 
     private String username;
-    private String password;
+    String password;
     private String cellPhoneNumber;
     private String FirstName;
     private String LastName;
@@ -45,7 +45,7 @@ public class Login {
     }
 
     public boolean checkCellPhoneNumber() {
-        String regex = "^\\+27|27[0-9]{9}$";
+        String regex = "^\\+27[0-9]{9}$";
         return Pattern.matches(regex, cellPhoneNumber);
 
     }
@@ -71,7 +71,7 @@ public class Login {
 
     public String returnLoginStatus(String enteredUsername, String enteredPassword) {
         if(LoginUser(enteredUsername, enteredPassword)){
-            return "welcome" + FirstName + "" + LastName+ ",it is a pleasure to see you again";
+            return "welcome " + FirstName + " " + LastName+ ",it is a pleasure to see you again";
         }else {
             return "Username or password incorrect, please try again";
         }
